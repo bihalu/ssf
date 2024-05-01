@@ -1,2 +1,12 @@
 .build*
 src/framework/tests/proxy/proxy.json
+container/ssf.tar
+container/certs/dh4096.pem
+container/certs/ca.crt
+container/certs/ca.key
+container/certs/ca.srl
+container/certs/certificate.crt
+container/certs/certificate.csr
+container/certs/extfile.txt
+container/certs/private.key
+container/certs/trusted/ca.crt
