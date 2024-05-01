@@ -50,7 +50,7 @@ cd /app
 ls /app/certs
 ls /app/certs/trusted
 if [[ ${MODE} == server ]] ; then
-  /app/upx-ssfd -v ${LOGLEVEL} -p ${PORT} -g
+  /app/upx-ssfd -v ${LOGLEVEL} -p ${PORT} -g -l 0.0.0.0
 else
   /app/upx-ssf -v ${LOGLEVEL} -p ${PORT} -R ${FORWARD_PORT}:${FORWARD_HOST}:${FORWARD_PORT} ${HOST}
 fi
