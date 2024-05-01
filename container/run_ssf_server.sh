@@ -7,7 +7,7 @@
 [ ! -f certs/certificate.crt ] && echo missing certs/certificate.crt && exit 1
 
 # run container with podman or docker
-RUN="run -it -e LOGLEVEL=trace -e MODE=server -p 9011:8011 -v ./certs/dh4096.pem:/certs/dh4096.pem:ro -v ./certs/trusted/ca.crt:/certs/ca.crt:ro -v ./certs/private.key:/certs/private.key:ro -v ./certs/certificate.crt:/certs/certificate.crt:ro localhost/ssf:3.0.0"
+RUN="run -it -e LOGLEVEL=trace -e MODE=server -p 9011:8011 -p 32000:32000 -v ./certs/dh4096.pem:/certs/dh4096.pem:ro -v ./certs/trusted/ca.crt:/certs/ca.crt:ro -v ./certs/private.key:/certs/private.key:ro -v ./certs/certificate.crt:/certs/certificate.crt:ro localhost/ssf:3.0.0"
 which podman
 [ $? -eq 0 ] && podman $RUN && exit $?
 
